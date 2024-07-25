@@ -30,4 +30,4 @@ jobs:
         if: ${{github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
         run: echo "not skipping"
       - name: Debug Environment
-        run: echo ${{ env.PROD_URL }}
+        run: echo ${{ secrets.PROD_URL }}

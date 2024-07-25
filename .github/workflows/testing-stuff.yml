@@ -29,3 +29,5 @@ jobs:
       - name: should skip if commit message contains skip
         if: ${{github.event_name == 'push' && !contains(toJson(github.event.commits.*.message), '#skip') }}
         run: echo "not skipping"
+      - name: Debug Environment
+        run: echo "PROD_URL=${{ env.PROD_URL }}"
